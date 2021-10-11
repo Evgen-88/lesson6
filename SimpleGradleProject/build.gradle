@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+build {
+	if (project.hasProperty("dev")) {
+		project.buildDir = 'build/dev'
+	}
+	if (project.hasProperty("stable")) {
+		project.buildDir = 'build/stable'
+	}
+}
